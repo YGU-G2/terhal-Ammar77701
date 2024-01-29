@@ -156,7 +156,7 @@ class _SignInFormState extends State<SignInForm> {
         Text(widget.appLocalizations!.dontHaveAnAccount),
         SizedBox(width: Get.width * 0.01),
         GestureDetector(
-          onTap: () => Get.toNamed('signup'),
+          onTap: () => Get.toNamed('/signup'),
           child: Text(
             widget.appLocalizations!.createAccount,
             style: const TextStyle(

@@ -7,6 +7,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:terhal/form/controls/data.dart';
 import 'package:terhal/form/controls/password.dart';
 import 'package:terhal/form/controls/select.dart';
+import 'package:terhal/utils/constants.dart';
 // import 'package:terhal/controllers/firebase_auth_controller.dart';
 import 'package:terhal/widgets/button.dart';
 // import 'package:terhal/widgets/loading.dart';
@@ -31,8 +32,6 @@ class _SignUpFormState extends State<SignUpForm> {
 
   int currentStep = 0;
   double height = 400;
-
-  // start
 
   @override
   Widget build(BuildContext context) {
