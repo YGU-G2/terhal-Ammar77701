@@ -80,6 +80,12 @@
     "asthma": "Asthma",
     "noCondition": "No Condition",
     "needStroller": "Do you need a stroller or a stroller for people with special needs?",
-    "passwordsDoNotMatch": "Passwords do not match"
+    "passwordsDoNotMatch": "Passwords do not match",
+    "userNameErrorText": "The User Name Most Be Greater Than 6 Charachters",
+    "notRequired": "This Field Is Required",
+    "emailErrorText": "The Email Not Validate",
+    "passwordErrorText": "The Password Most Be Greater Than 8 Charachters",
+    "createdAccont": "The Account Was Successfully created"
+
   }
   

@@ -19,36 +19,52 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     final appLocalizations = AppLocalizations.of(context);
 
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(Get.width * 0.08),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: Get.width * 0.08),
-                  child: Text(
-                    appLocalizations!.helloTxt,
-                    style: const TextStyle(
-                      fontSize: 60,
-                      fontWeight: FontWeight.bold,
+    return Scaffold(        
+      body: Container(
+        width: Get.width,
+        height: Get.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.green,
+              Colors.blue,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.all(Get.width * 0.08),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: Get.width * 0.08),
+                    child: Text(
+                      appLocalizations!.helloTxt,
+                      style: const TextStyle(
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  appLocalizations.signinToYourAccount,
-                  style: const TextStyle(
-                    fontSize: 18,
+                  Text(
+                    appLocalizations.signinToYourAccount,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                SizedBox(height: Get.height * 0.1),
-                SignInForm(
-                  formKey: formKey,
-                  appLocalizations: appLocalizations,
-                ),
-              ],
+                  SizedBox(height: Get.height * 0.1),
+                  SignInForm(
+                    formKey: formKey,
+                    appLocalizations: appLocalizations,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

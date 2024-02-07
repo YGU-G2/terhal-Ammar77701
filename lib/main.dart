@@ -8,6 +8,8 @@ import 'package:terhal/firebase_options.dart';
 import 'package:terhal/home.dart';
 import 'package:terhal/l10n/ln10.dart';
 import 'package:terhal/pages/signin_page/signin_page.dart';
+import 'package:terhal/pages/signup_page.dart/signup_page.dart';
+import 'package:terhal/utils/constants.dart';
 
 late final FirebaseApp app;
 late final FirebaseAuth auth;
@@ -27,13 +29,15 @@ class TerhalApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      localizationsDelegates: [
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [
         AppLocalizations.delegate, // this one was missing
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       theme: ThemeData(
+        primaryColor: Constants.primaryColor,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.red,
           centerTitle: true,
@@ -47,6 +51,10 @@ class TerhalApp extends StatelessWidget {
         GetPage(
           name: SignInPage.id,
           page: () => const SignInPage(),
+        ),
+        GetPage(
+          name: SignUpPage.id,
+          page: () => const SignUpPage(),
         ),
       ],
       initialRoute: auth.currentUser != null ? HomePage.id : SignInPage.id,

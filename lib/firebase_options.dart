@@ -17,16 +17,16 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -49,20 +49,21 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDIPU9IX4ACLbII5czab5vJmkGN67zo0FE',
-    appId: '1:32761491505:android:a955b5d3e3ff30d095e510',
-    messagingSenderId: '32761491505',
-    projectId: 'terhal-app-ygu-2',
-    storageBucket: 'terhal-app-ygu-2.appspot.com',
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDuHQhiKh9BlXB3lnqz89b53OWe08qKCkc',
+    appId: '1:348639443380:web:4d23ef5287dbb158485ae1',
+    messagingSenderId: '348639443380',
+    projectId: 'terhal-legend',
+    authDomain: 'terhal-legend.firebaseapp.com',
+    storageBucket: 'terhal-legend.appspot.com',
+    measurementId: 'G-42M9PHCY15',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDdusYM0qP9W16MiMLqhSLOMjwxi3MW4vY',
-    appId: '1:32761491505:ios:4d9dedb6463447da95e510',
-    messagingSenderId: '32761491505',
-    projectId: 'terhal-app-ygu-2',
-    storageBucket: 'terhal-app-ygu-2.appspot.com',
-    iosBundleId: 'com.example.terhal',
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyBZT7_XdgeqQyprwSM1PBAixgWUbDDHLc0',
+    appId: '1:348639443380:android:d2c5ada89b4b8321485ae1',
+    messagingSenderId: '348639443380',
+    projectId: 'terhal-legend',
+    storageBucket: 'terhal-legend.appspot.com',
   );
 }

@@ -10,6 +10,7 @@ class Data extends StatelessWidget {
   final Color? color;
   final bool readOnly;
   final Widget? prefixIcon;
+  final double? width;
   final List<String? Function(String?)> validators;
 
   const Data({
@@ -20,29 +21,20 @@ class Data extends StatelessWidget {
     this.color,
     this.readOnly = false,
     this.prefixIcon,
-    this.validators = const [],
+    this.validators = const [], this.width,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      child: FormBuilderTextField(
+      width: width,
+      child: FormBuilderTextField(        
         key: key,
         name: name,
-        readOnly: readOnly,
+        style: TextStyle(color: Colors.black),
+        readOnly: readOnly,        
         initialValue: initialValue,
-        decoration: Palette.formFieldDecoration(
+        decoration: Palette.formFieldDecoration(          
           label: label,
           fillColor: color,
           prefixIcon: prefixIcon != null

@@ -11,6 +11,7 @@ class Select extends StatelessWidget {
   final Color? color;
   final List options;
   final Widget? prefixIcon;
+  final double? width;
   final List<String? Function(dynamic)> validators;
 
   const Select({
@@ -22,50 +23,54 @@ class Select extends StatelessWidget {
     this.label = '',
     this.color,
     this.prefixIcon,
-    this.validators = const [],
+    this.validators = const [], this.width,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      child: FormBuilderDropdown(
-        key: key,
-        name: name,
-        enabled: enabled,
-        decoration: Palette.formFieldDecoration(
-          label: label,
-          fillColor: color,
-          prefixIcon: prefixIcon != null
-              ? Padding(
-                  padding: const EdgeInsets.only(
-                    right: 6,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [prefixIcon!],
-                  ),
-                )
-              : null,
+    return SizedBox(
+      width: width,
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: const Offset(0, 3),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(30.0),
         ),
-        initialValue: initialValue,
-        validator: FormBuilderValidators.compose(validators),
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
-        elevation: 0,
-        items: options.toSet().toList().map<DropdownMenuItem>((option) {
-          return DropdownMenuItem(value: option, child: Text(option ?? ''));
-        }).toList(),
+        child: FormBuilderDropdown(  
+          dropdownColor: Colors.white70,                            
+          key: key,
+          name: name,
+          enabled: enabled,
+          decoration: Palette.formFieldDecoration(
+            label: label,
+            fillColor: color,
+            prefixIcon: prefixIcon != null
+                ? Padding(
+                    padding: const EdgeInsets.only(
+                      right: 6,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [prefixIcon!],
+                    ),
+                  )
+                : null,
+          ),
+          initialValue: initialValue,
+          validator: FormBuilderValidators.compose(validators),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          elevation: 0,
+          items: options.toSet().toList().map<DropdownMenuItem>((option) {
+            return DropdownMenuItem(value: option, child: Text(option ?? ''));
+          }).toList(),
+        ),
       ),
     );
   }

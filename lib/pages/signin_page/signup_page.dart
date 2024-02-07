@@ -19,31 +19,44 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     final appLocalizations = AppLocalizations.of(context);
-
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,        
-        children: [
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  appLocalizations!.createNewAccount,
-                  style: const TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),                
-                SizedBox(height: Get.height * 0.1),
-                SignUpForm(
-                  formKey: formKey,
-                  appLocalizations: appLocalizations,
-                ),
-              ],
-            ),
+      body: Container(
+        width: Get.width,
+        height: Get.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.green,
+              Colors.blue,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-        ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,        
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    appLocalizations!.createNewAccount,
+                    style: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),                
+                  SizedBox(height: Get.height * 0.1),
+                  SignUpForm(
+                    formKey: formKey,
+                    appLocalizations: appLocalizations,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

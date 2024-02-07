@@ -13,7 +13,7 @@ class Palette {
     String? field,
     Color? fillColor,
   }) {
-    return InputDecoration(
+    return InputDecoration(            
       labelText: label,
       hintText: hintText,
       suffixIcon: suffixIcon,
@@ -25,20 +25,20 @@ class Palette {
               horizontal: 10, vertical: prefixIcon != null ? 8 : 16),
       enabledBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.transparent),
-        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
       ),
       border: const OutlineInputBorder(
         borderSide: BorderSide(),
-        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
       ),
       focusedBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.blue),
-        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
       ),
       errorBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.red),
-        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-      ),
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+      ),      
       filled: filled,
       fillColor: fillColor ?? Palette.bgColor,
     );

@@ -7,7 +7,6 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:terhal/form/controls/data.dart';
 import 'package:terhal/form/controls/password.dart';
 import 'package:terhal/form/controls/select.dart';
-import 'package:terhal/utils/constants.dart';
 // import 'package:terhal/controllers/firebase_auth_controller.dart';
 import 'package:terhal/widgets/button.dart';
 // import 'package:terhal/widgets/loading.dart';
@@ -27,9 +26,6 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  // final FirebaseAuthController authController = Get.find();
-  // final ThemeController themeController = Get.find();
-
   int currentStep = 0;
   double height = 400;
 
@@ -42,7 +38,7 @@ class _SignUpFormState extends State<SignUpForm> {
           child: SizedBox(
             height: height,
             width: Get.width,
-            child: Stepper(
+            child: Stepper(            
               elevation: 0,
               currentStep: currentStep,
               type: StepperType.horizontal,              

@@ -81,6 +81,11 @@
     "asthma": "الربو",
     "noConditions": "لا يوجد",
     "needStroller":"هل تحتاج إلى عربة أطفال أو عربة أطفال لذوي الاحتياجات الخاصة؟",
-    "passwordsDoNotMatch": "كلمات المرور غير متطابقة"
+    "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
+    "userNameErrorText": "يجب أن يكون اسم المستخدم أكبر من 6 أحرف",
+    "notRequired": "يجب تعبئة هذا الحقل",
+    "emailErrorText": "الرجاء كتابة البريد الإلكتروني بشكل صحيح",
+    "passwordErrorText": "يجب أن تكون كلمة السر اكبر من 8 محارف",
+    "createdAccont": "تم إنشاء الحساب بنجاح"
   }
   

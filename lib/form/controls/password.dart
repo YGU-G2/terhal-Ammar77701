@@ -28,18 +28,7 @@ class _PasswordState extends State<Password> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
-        borderRadius: BorderRadius.circular(20.0),
-      ),
+    return Container(      
       child: FormBuilderTextField(
         key: widget.key,
         name: widget.name,
